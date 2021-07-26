@@ -1,5 +1,4 @@
 const Joi = require("joi");
-Joi.objectId = require("joi-objectid")(Joi);
 const mongoose = require("mongoose");
 const genres = require("./routes/genres");
 const customers = require("./routes/customers");
@@ -8,6 +7,7 @@ const rentals = require("./routes/rentals");
 const user = require("./routes/user");
 const auth = require("./routes/auth");
 const express = require("express");
+const { post } = require("./routes/user");
 const app = express();
 
 var mongoDB = "mongodb://127.0.0.1/my_database";
@@ -26,3 +26,4 @@ app.use("/api/auth", auth);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`http://localhost:${port}`));
+// app.listen(port, "106.207.86.2");

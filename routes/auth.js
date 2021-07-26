@@ -16,7 +16,9 @@ router.post("/", async (req, res) => {
     user.password
   );
   if (!validatePassword)
-    return res.status(400).send("Invalid username or password ");
+    return res
+      .status(400)
+      .send("Invalid username or password , Please check again");
 
   const token = jwt.sign({ _id: user._id }, "privateToek");
 
